@@ -23,27 +23,16 @@ The datasets used for statistical fitting and OPF optimization model are both sy
 - Cauchy synthetic: Synthetic forecast errors that are Cauchy distributed, of which the parameters are used to fit wind forecast errors of wind units in ERCOT.
 - NordPool Real: Sourced from NordPool production & production forecast over 2 weeks (15 consecutive days) in March. The file contains wind power generation forecasts and actual (in MW) data for 10 European regions at a 15-minute time window. 
 
-### 2. `neo-lrp/`
-Core implementation of the neural embedded framework:
-- `flp_org/`: Initial MIP model solution generators
-- `dataparse/`: Dataset conversion utilities
-- `network/`: Neural network transformation tools (ONNX to PyTorch)
-- `neural_embedded_model/`: Main neural-embedded implemention
-- `solver_cvrp/`: VRPSolverEasy integration for exact route cost calculation
+### 2. Code (Estimation)
+Code for comparing estimation performances using classical and constraint-informed approaches:
+- `code/estimation/`: code used for section III of the paper, to demonstrate GMM + Constraint-informed gives better fit on synthetic Cauchy data.
 
-### 3. `pre_trained_model/`
-Pre-trained neural networks (ONNX format) for routing cost prediction:
+
+### 3. Code (Optimization)
+Code for solving reformulate DC-OPF problem: 
 - Includes pre-trained $\hat{\phi}$ and $\hat{\rho}$ models for GVS, PSCC, and RSCC sampling methods
 
-### 4. `flp/`
-FLP model implementation:
-- `dataparser/`: Data format conversion tools
-- `flp_execute/`: Main execution script
-- `flp.py`: Facility assignment logic
-- `vrp.py`: Vehicle routing implementation
-- `solver_cvrp/`: Exact routing solver integration
 
-## Installation
 
 1. **Clone the Repository**
 ```bash
