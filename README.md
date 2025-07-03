@@ -26,6 +26,7 @@ The datasets used for statistical fitting and OPF optimization model are both sy
 ### 2. Code (Estimation)
 Code for comparing estimation performances using classical and constraint-informed approaches:
 - `code/estimation/`: code used for section III of the paper, to demonstrate GMM + Constraint-informed gives better fit on synthetic Cauchy data.
+- `code/estimation/get_ptdf.jl` and `code/estimation/eta_l_estimate.py`: are the files for getting PTDF matrix, and use that to construct 2D data samples for eta_l and further estimating a GMM.
 
 
 ### 3. Code (Optimization)
