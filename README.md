@@ -14,7 +14,19 @@ This repository corresponds to the following paper.
 
 This repository contains all the implementations needed to reproduce the computational studies in the paper, which include simulating different datasets as randomness, optimization models to solve chance-constrained optimal power flow (cc-opf), out-of-sample reliabitilies validation. In addition, this repository contains the IEEE test cases system in MATPOWER format, where users can use their own preferred test cases or modify.
 
-## Repository Structure
+## Requirements
+
+- Python 3.12.6+
+- Julia v1.10.4+
+- JuMP v1.22.1+
+- Gurobi Solver v11.0.2+
+
+### Pre-installed Package Requirement
+In addition to basic Python and Julia Packages (e.g., `numpy`, `matplotlib`, `LinearAlgebra`, `pandas`), this repository relies heavily on the following packages:
+- Python `scikit-learn`, in particular `sklearn.mixture` for GMM estimations
+- Julia `PowerModels`, for parsing test cases and constructing a power system network
+
+## Repository Structure and Usage
 
 ### 1. Datasets
 
@@ -34,12 +46,3 @@ Code for comparing estimation performances using classical and constraint-inform
 Code for solving reformulate DC-OPF problem: 
 - Includes pre-trained $\hat{\phi}$ and $\hat{\rho}$ models for GVS, PSCC, and RSCC sampling methods
 
-## Usage
-
-To run the neural embedded framework:
-
-## Results
-
-The framework generates two Excel files in the `results/` directory:
-
-For questions and support, please open an issue in the repository or contact the authors.
