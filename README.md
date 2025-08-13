@@ -37,7 +37,7 @@ Code for comparing estimation performances using classical and constraint-inform
 - `code/estimation/toy_example_methodology.py`: Run this code to get a simple demo of the advantage of constraint-informed over classical on a synthetic Cauchy distributed data. Results are in Table 2 and Figure 1. 
 - `code/estimation/Gaussian_data_simulation.py`,`code/estimation/Cauchy_data_simulation.py`, `code/estimation/NordPoolSimu_ver2.py`: Run these codes to generate plots for Figure 3 and obtain statistics for Table 3. 
 - `code/estimation/get_ptdf.jl` and `code/estimation/eta_l_estimate.py`: are the files for getting PTDF matrix, and use that to construct 2D data samples for eta_l and further estimating a GMM.
-
+- `code/estimation/Cauchy_data_simulation_FixedZeroMean.py`, `code/estimation/NordPoolSimu_zeromean.py`, `code/estimation/eta_l_estimate_FixedZeroMean.py`: Use these files to apply a modified EM algorithm to fix the means to be zero for the estimation.
 
 ### 3. Code (Optimization)
 Code for reformulated DC-OPF problem: 
