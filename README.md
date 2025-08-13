@@ -1,7 +1,5 @@
 # CC_OPF_Constraint_Informed_Randomness
 
-This repository corresponds to the following paper. 
-
 ## Table of Contents
 - [Overview](#overview)
 - [Requirements](#requirements)
