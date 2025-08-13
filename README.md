@@ -4,11 +4,8 @@ This repository corresponds to the following paper.
 
 ## Table of Contents
 - [Overview](#overview)
-- [Repository Structure](#repository-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Results](#results)
-- [Citation](#citation)
+- [Requirements](#requirements)
+- [Repository Structure and Usage](#repository-structure)
 
 ## Overview
 
@@ -43,6 +40,6 @@ Code for comparing estimation performances using classical and constraint-inform
 
 
 ### 3. Code (Optimization)
-Code for solving reformulate DC-OPF problem: 
-- Includes pre-trained $\hat{\phi}$ and $\hat{\rho}$ models for GVS, PSCC, and RSCC sampling methods
-
+Code for reformulated DC-OPF problem: 
+- `code/optimization/pwl.py`: Find the optimal placement of piecewise linear approximation by specificing a tolerance.
+- `code/optimization/pwl.py`: 
