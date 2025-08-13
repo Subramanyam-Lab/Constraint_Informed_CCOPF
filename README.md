@@ -5,7 +5,7 @@ This repository corresponds to the following paper.
 ## Table of Contents
 - [Overview](#overview)
 - [Requirements](#requirements)
-- [Repository Structure and Usage](#repository-structure)
+- [Repository Structure and Usage](#repository-structure-and-usage)
 
 ## Overview
 
