@@ -42,3 +42,4 @@ Code for reformulated DC-OPF problem:
 - `code/optimization/pwl.py`: Find the optimal placement of piecewise linear approximation by specificing a tolerance.
 - `code/optimization/gaussian_reformulation.jl`: Reformulation for CC-OPF when using a single Gaussian distribution.
 - `code/optimization/gmm_reformulation.jl`: Reformulation for CC-OPF when using GMM distribution.
+- `code/optimization/constraint_violation.jl`: run OPF model and obtain worst-case constraint-violation.
