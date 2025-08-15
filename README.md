@@ -26,9 +26,9 @@ In addition to basic Python and Julia Packages (e.g., `numpy`, `matplotlib`, `Li
 ### 1. Datasets
 
 The datasets used for statistical fitting and OPF optimization model are both synthetic and real-world data.
-- Gaussian synthetic: Originally used to validate classical and constraint-informed approaches when estimating using a Gaussian distribution. Since MLEs of Gaussian estimators are independent of the underlying distribution and are preserved after linear transformation, both methods will give the same results. Therefore, the parameters don't matter, and users can even change to other distributions (e.g., Weibull) if only the Gaussian distribution is used to fit the data points. 
-- Cauchy synthetic: Synthetic forecast errors that are Cauchy distributed, of which the parameters are used to fit wind forecast errors of wind units in ERCOT.
-- NordPool Real: Sourced from NordPool production & production forecast over 2 weeks (15 consecutive days) in March. The file contains wind power generation forecasts and actual (in MW) data for 10 European regions at a 15-minute time window. 
+- Gaussian synthetic: Synthetic forecast errors that are Gaussian distributed.  
+- Cauchy synthetic: Synthetic forecast errors that are Cauchy distributed.
+- NordPool Real: Sourced from NordPool production & production forecast over 2 weeks (15 consecutive days) in March. The file contains wind power generation forecasts and actual (in MW) data for 10 European regions at a 15-minute time window. In experiemtns, these errors will be normalized. 
 
 ### 2. Code (Estimation)
 Code for comparing estimation performances using classical and constraint-informed approaches:
