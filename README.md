@@ -43,3 +43,14 @@ Code for reformulated DC-OPF problem:
 - `code/optimization/gaussian_reformulation.jl`: Reformulation for CC-OPF when using a single Gaussian distribution.
 - `code/optimization/gmm_reformulation.jl`: Reformulation for CC-OPF when using GMM distribution.
 - `code/optimization/constraint_violation.jl`: run OPF model and obtain worst-case constraint-violation.
+
+
+## Citation
+If you have ever used the datasets and estimation/optimization codes, please cite the following paper: 
+```bibtex
+@article{yi2025chance,
+  title={Chance-Constrained DC Optimal Power Flow Using Constraint-Informed Statistical Estimation},
+  author={Yi, Tianyang and Maldonado, D Adrian and Subramanyam, Anirudh},
+  journal={arXiv preprint arXiv:2508.21687},
+  year={2025}
+}
