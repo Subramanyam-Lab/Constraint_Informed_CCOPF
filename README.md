@@ -4,10 +4,34 @@
 - [Overview](#overview)
 - [Requirements](#requirements)
 - [Repository Structure and Usage](#repository-structure-and-usage)
+- [Citation](#citation)
 
 ## Overview
 
 This repository contains all the implementations needed to reproduce the computational studies in the paper, which include simulating different datasets as randomness, optimization models to solve chance-constrained optimal power flow (cc-opf), out-of-sample reliabitilies validation. In addition, this repository contains the IEEE test cases system in MATPOWER format, where users can use their own preferred test cases or modify.
+
+## Installation
+
+1. **Create and Activate Conda Environment**
+```bash
+conda create --name constraint_informed_ccopf python=3.9
+conda activate constraint_informed_ccopf
+```
+
+2. **Install Packages(for example, scikit-learn)**
+```bash
+pip install scikit-learn
+```
+
+3. **Install Packages in Julia(for example, PowerModels)**
+In a new Julia REPL, type the right square bracket ] to enter package mode
+```bash
+activate constraint_informed_ccopf
+```
+In the same package mode, add necessary packages:
+```bash
+add PowerModels
+```
 
 ## Requirements
 
