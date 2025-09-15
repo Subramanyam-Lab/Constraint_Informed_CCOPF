@@ -12,15 +12,14 @@ This repository contains all the implementations needed to reproduce the computa
 
 ## Installation
 
-1. **Create and Activate Conda Environment**
-```bash
-conda create --name constraint_informed_ccopf python=3.9
-conda activate constraint_informed_ccopf
-```
+Clone and install requirements for Python scripts:
 
-2. **Install Packages(for example, scikit-learn)**
 ```bash
-pip install scikit-learn
+git clone https://github.com/Subramanyam-Lab/Constraint_Informed_CCOPF
+cd Constraint_Informed_CCOPF
+conda create -n constraint_informed_ccopf python=3.9 -y
+conda activate constraint_informed_ccopf
+pip install -r requirements.txt
 ```
 
 3. **Install Packages in Julia(for example, PowerModels)**
