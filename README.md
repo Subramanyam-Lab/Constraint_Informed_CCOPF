@@ -22,16 +22,12 @@ conda activate constraint_informed_ccopf
 pip install -r requirements.txt
 ```
 
-3. **Install Packages in Julia(for example, PowerModels)**
-In a new Julia REPL, type the right square bracket ] to enter package mode
+In the previously cloned folder, do the following to set up Julia environment:
 ```bash
-activate constraint_informed_ccopf
+git clone https://github.com/Subramanyam-Lab/Constraint_Informed_CCOPF
+cd Constraint_Informed_CCOPF
+julia --project=. -e 'using Pkg; Pkg.instantiate()'
 ```
-In the same package mode, add necessary packages:
-```bash
-add PowerModels
-```
-
 
 ## Repository Structure and Usage
 
