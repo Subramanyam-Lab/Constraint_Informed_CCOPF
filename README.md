@@ -29,6 +29,8 @@ cd Constraint_Informed_CCOPF
 julia --project=. -e 'using Pkg; Pkg.instantiate()'
 ```
 
+To install an academic license of the Gurobi solver, please visit (https://www.gurobi.com/academia/academic-program-and-licenses/).
+
 ## Repository Structure and Usage
 
 ### 1. Datasets
@@ -55,15 +57,35 @@ python Cauchy_data_simulation.py
 python NordPoolSimu_ver2.py
 ```
 
-- `code/estimation/get_ptdf.jl` and `code/estimation/eta_l_estimate.py`: are the files for getting PTDF matrix, and use that to construct 2D data samples for eta_l and further estimating a GMM.
-- `code/estimation/Cauchy_data_simulation_FixedZeroMean.py`, `code/estimation/NordPoolSimu_zeromean.py`, `code/estimation/eta_l_estimate_FixedZeroMean.py`: Use these files to apply a modified EM algorithm to fix the means to be zero for the estimation.
+- Run these scripts to get the PTDF matrix (in Julia) and use it to construct samples for 2D randomness eta_l for GMM estimation (in Python)
+```bash
+include("get_ptdf.jl")
+```
+```bash
+python eta_l_estimate.py
+```
+
+- Run these three scripts to generate statistics in the Appendix.C by constraining zeromean for GMM estimation, as well as getting estimated parameters for 2D randomness eta_l
+```bash
+python Cauchy_data_simulation_FixedZeroMean.py
+```
+```bash
+python NordPoolSimu_zeromean.py
+```
+```bash
+python eta_l_estimate_FixedZeroMean.py
+```
 
 ### 3. Code (Optimization)
 Code for reformulated DC-OPF problem: 
-- `code/optimization/pwl.py`: Find the optimal placement of piecewise linear approximation by specificing a tolerance.
-- `code/optimization/gaussian_reformulation.jl`: Reformulation for CC-OPF when using a single Gaussian distribution.
-- `code/optimization/gmm_reformulation.jl`: Reformulation for CC-OPF when using GMM distribution.
-- `code/optimization/constraint_violation.jl`: run OPF model and obtain worst-case constraint-violation.
+- Run this script to implement the algorithm in [Fathabad et al (2023)](https://www.sciencedirect.com/science/article/pii/S0377221722004957) that finds the optimal placement of piecewise linear approximation by specifying a tolerance.
+```bash
+python pwl.py
+```  
+- Run this script to solve an OPF model and obtain worst-case constraint-violation:
+```bash
+include("constraint_violation.jl")
+``` 
 
 
 ## Citation
