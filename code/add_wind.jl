@@ -3,19 +3,16 @@ using LinearAlgebra
 using CSV
 using DataFrames
 
-# total load for wind penetration
 function compute_total_load(data::Dict)::Float64
     return sum(data["load"][l]["pd"] for l in keys(data["load"]))
 end
 
-# Sort controllable by pg_max
 function get_largest_generator_ids(data::Dict, n::Int)::Vector{String}
     gens = collect(keys(data["gen"]))
     sorted = sort(gens, by = g -> data["gen"][g]["pmax"], rev = true)
     return sorted[1:n]
 end
 
-# Add wind generators
 function add_wind_generators!(
     data::Dict,
     wind_host_gens::Vector{String},
@@ -66,7 +63,6 @@ function compute_ptdf(data::Dict)
     return PowerModels.calc_basic_ptdf_matrix(data)
 end
 
-# Function to get wind indices to construct H_l^wind. 
 function get_wind_bus_indices(
     data::Dict,
     wind_ids::Vector{String},
@@ -83,8 +79,6 @@ function get_wind_bus_indices(
     return wind_bus_indices
 end
 
-
-# Export wind PTDF submatrix to CSV
 function export_wind_ptdf(
     H_wind::Matrix,
     line_ids::Vector{String},
@@ -112,17 +106,10 @@ function main()
     data = PowerModels.make_basic_network(parse_file(case_path))
 
     total_load = compute_total_load(data)
-    println("Total load = ", total_load)
-
     wind_total_capacity = renewable_penetration * total_load
     wind_capacity_per_farm = wind_total_capacity / n_wind
 
-    println("Total wind capacity = ", wind_total_capacity)
-    println("Wind per farm = ", wind_capacity_per_farm)
-
     wind_host_gens = get_largest_generator_ids(data, n_wind)
-    println("Selected host generators: ", wind_host_gens)
-
     wind_ids = add_wind_generators!(
         data,
         wind_host_gens,
@@ -130,9 +117,6 @@ function main()
         capacity_factor
     )
 
-    println("Added wind generators: ", wind_ids)
-
-    # Extract branch (line) ordering
     line_ids = collect(keys(data["branch"]))  
 
     ptdf = compute_ptdf(data)
@@ -141,14 +125,7 @@ function main()
     buses, bus_idx = build_bus_index(data)
 
     wind_bus_indices = get_wind_bus_indices(data, wind_ids, bus_idx)
-    println("Wind bus indices (PTDF columns): ", wind_bus_indices)
-
     H_wind = ptdf[:, wind_bus_indices]
-    println("Hl submatrix dimension: ", size(H_wind))
-
-    println("PTDF rows: ", size(H_wind, 1))
-    println("Number of branch IDs: ", length(line_ids))
-
     output_csv = joinpath(@__DIR__, "..", "data", "H_wind_matrix.csv")
     export_wind_ptdf(H_wind, line_ids, output_csv)
 end
