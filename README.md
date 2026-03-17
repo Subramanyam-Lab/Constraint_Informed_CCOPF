@@ -100,7 +100,11 @@ include("GMM_reformulation_118.jl")
 include("GMM_reformulation_polish.jl")
 ```
 
-
+The NordPool dataset is limited in data samples. Use the following script in Python to partition the dataset and perform constraint-informed fitting. The estimated parameters will be written to ../data directory.
+```bash
+python NordPool_data_fitting_CI.py
+```
+Use the following script to do the CC-OPF optimization using constraint-informed parameters on the NordPool dataset. The worst-case violation of 10 runs (seeds 42-51) will be saved to ../data/118_ci_NordPool_optimization_summary.csv. These are the quantities plotted in Fig. 4.
 ### 3. Code (Optimization)
 Code for reformulated DC-OPF problem: 
 - Run this script to implement the algorithm in [Fathabad et al (2023)](https://www.sciencedirect.com/science/article/pii/S0377221722004957) that finds the optimal placement of piecewise linear approximation by specifying a tolerance.
