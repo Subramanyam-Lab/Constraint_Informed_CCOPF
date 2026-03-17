@@ -71,6 +71,14 @@ include("add_wind.jl")
 include("add_wind_118.jl")
 ```
 
+In Python, run these scripts to do 10 different estimations (seeds 42-51) of Omega (aggregate errors) on the 118 and Polish case with zero means, and write all estimated parameters to the ../data directory. 
+```bash
+python Omega_118_zeromean.py
+```
+```bash
+python Omega_polish_zeromean.py
+```
+
 In Python, run these scripts to do 10 different estimations (seeds 42-51) of eta_l on the 118 and Polish case with zero means, using the PTDF matrices generated in the previous step, writing all estimated parameters to the ../data directory. 
 ```bash
 python eta_l_estimation_118_zeromean.py
