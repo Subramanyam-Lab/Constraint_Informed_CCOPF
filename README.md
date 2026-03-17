@@ -40,21 +40,27 @@ The datasets used for statistical fitting and OPF optimization model are both sy
 - Cauchy synthetic: Synthetic forecast errors that are Cauchy distributed.
 - NordPool Real: Sourced from NordPool production & production forecast over 2 weeks (15 consecutive days) in March. The file contains wind power generation forecasts and actual (in MW) data for 10 European regions at a 15-minute time window. In experiments, these errors will be normalized. 
 
-### 2. Code (Estimation)
+### 2. Code 
 - Run this code to get a simple demo of the advantage of constraint-informed over classical on a synthetic Cauchy distributed data and to obtain results in Table 2 and Figure 1 from the paper.
 ```bash
 python toy_example_methodology.py 
 ```
 
-- Run these three scripts individually to generate plots for Figure 3 and obtain statistics for Table 3 from the paper.
-```bash
-python Gaussian_data_simulation.py
-```
+- Run these two scripts to plot the constraint-informed and classical fitting of Synthetic-C and NordPool datasets in Fig. 3
 ```bash
 python Cauchy_data_simulation.py
 ```
 ```bash
-python NordPoolSimu_ver2.py
+python NordPool_data_simuation.py
+```
+
+- Run the following script to store BIC values for K=1,2,...,10 when fitting Synthetic-C in 10d and 50d
+```bash
+python Cauchy_data_BIC_scalability.py
+```
+- Run the following script to load the BIC values and plot Fig. 6
+```bash
+python Cauchy_scalability_BIC_plot.py
 ```
 
 - Run these scripts to get the PTDF matrix (in Julia) and use it to construct samples for 2D randomness eta_l for GMM estimation (in Python)
