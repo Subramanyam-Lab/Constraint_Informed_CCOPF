@@ -63,12 +63,12 @@ python Cauchy_data_BIC_scalability.py
 python Cauchy_scalability_BIC_plot.py
 ```
 
-- Run these scripts to get the PTDF matrix (in Julia) and use it to construct samples for 2D randomness eta_l for GMM estimation (in Python)
+- In Julia, run these scripts to output the PTDF matrix, which will be used for 2D fittings of eta_l
 ```bash
-include("get_ptdf.jl")
+include("add_wind.jl")
 ```
 ```bash
-python eta_l_estimate.py
+include("add_wind118.jl")
 ```
 
 - Run these three scripts to generate statistics in the Appendix.C by constraining zeromean for GMM estimation, as well as getting estimated parameters for 2D randomness eta_l
