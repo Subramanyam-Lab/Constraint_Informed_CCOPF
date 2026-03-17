@@ -108,7 +108,6 @@ The NordPool dataset is limited in data samples. Use the following script in Pyt
 python NordPool_data_fitting_CI.py
 ```
 Use the following script to do the CC-OPF optimization using constraint-informed parameters on the NordPool dataset. The worst-case violation of 10 runs (seeds 42-51) will be saved to ../data/118_ci_NordPool_optimization_summary.csv. These are the quantities plotted in Fig. 4.
-```
 ```bash
 include("NordPool_GMM_CI.jl")
 ```
