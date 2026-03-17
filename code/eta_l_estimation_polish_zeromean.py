@@ -158,7 +158,7 @@ def main():
     H_wind, line_ids = load_wind_ptdf(ptdf_csv)
     L, D = H_wind.shape
 
-    for current_seed in range(42, 43):
+    for current_seed in range(42, 52):
         output_csv = f"../data/gmmPolish_zero_mean_eta_l_seed{current_seed}.csv"
         xi = generate_cauchy_samples(N=N, D=D, gamma=gamma, seed=current_seed)
         Omega = xi.sum(axis=1)
