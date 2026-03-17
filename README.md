@@ -68,19 +68,17 @@ python Cauchy_scalability_BIC_plot.py
 include("add_wind.jl")
 ```
 ```bash
-include("add_wind118.jl")
+include("add_wind_118.jl")
 ```
 
-- Run these three scripts to generate statistics in the Appendix.C by constraining zeromean for GMM estimation, as well as getting estimated parameters for 2D randomness eta_l
+In Python, run these scripts to do 10 different estimations (seeds 42-51) of eta_l on the 118 and Polish case with zero means, using the PTDF matrices generated in the previous step, writing all estimated parameters to the ../data directory. 
 ```bash
-python Cauchy_data_simulation_FixedZeroMean.py
+python eta_l_estimation_118_zeromean.py
 ```
 ```bash
-python NordPoolSimu_zeromean.py
+python eta_l_estimation_polish_zeromean.py
 ```
-```bash
-python eta_l_estimate_FixedZeroMean.py
-```
+
 
 ### 3. Code (Optimization)
 Code for reformulated DC-OPF problem: 
