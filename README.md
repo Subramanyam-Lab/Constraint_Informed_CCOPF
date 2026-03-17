@@ -71,6 +71,12 @@ include("add_wind.jl")
 include("add_wind_118.jl")
 ```
 
+- Run this script to implement the algorithm in [Fathabad et al (2023)](https://www.sciencedirect.com/science/article/pii/S0377221722004957) that finds the optimal placement of piecewise linear approximation by specifying a tolerance, default set to 0.005. The slopes and intercepts will be saved to pwl_segments.csv in the current directory
+```bash
+python pwl.py
+```
+
+### Synthetic-C Dataset Fitting and Optimization for 118-bus and Polish case
 In Python, run these scripts to do 10 different estimations (seeds 42-51) of Omega (aggregate errors) on the 118 and Polish case with zero means, and write all estimated parameters to the ../data directory. 
 ```bash
 python Omega_118_zeromean.py
@@ -87,10 +93,7 @@ python eta_l_estimation_118_zeromean.py
 python eta_l_estimation_polish_zeromean.py
 ```
 
-- Run this script to implement the algorithm in [Fathabad et al (2023)](https://www.sciencedirect.com/science/article/pii/S0377221722004957) that finds the optimal placement of piecewise linear approximation by specifying a tolerance, default set to 0.005. The slopes and intercepts will be saved to pwl_segments.csv in the current directory
-```bash
-python pwl.py
-```
+
 
 In Julia, run these scripts to do the CC-OPF optimization using constraint-informed parameters. The worst-case violation of 10 runs (seeds 42-51) will be saved to ../data/118_ci_Cauchy_optimization_summary.csv and ../data/polish_ci_Cauchy_optimization_summary.csv. These are the quantities plotted in Fig. 4. 
 ```bash
@@ -99,7 +102,7 @@ include("GMM_reformulation_118.jl")
 ```bash
 include("GMM_reformulation_polish.jl")
 ```
-
+### NordPool Dataset Fitting and Optimization for 118-bus
 The NordPool dataset is limited in data samples. Use the following script in Python to partition the dataset and perform constraint-informed fitting. The estimated parameters will be written to ../data directory.
 ```bash
 python NordPool_data_fitting_CI.py
@@ -109,7 +112,14 @@ Use the following script to do the CC-OPF optimization using constraint-informed
 ```bash
 include("NordPool_GMM_CI.jl")
 ```
-
+In Python, the following script will estimate 10-dimensional GMM of joint forecast errors using the classical approach. The estimated parameters will be written to ../data directory.
+```bash
+python NordPool_data_fitting_Classical.py
+```
+In Julia, the following script will use these estimated parameters to solve the CC-OPF on 118-bus system. The worst-case violation of 10 runs (seeds 42-51) will be saved to ../data/118_classical_NordPool_optimization_summary.csv. These are the quantities plotted in Fig. 4.
+```bash
+include("NordPool_GMM_Classical.jl")
+```
 
 ## Citation
 If you have ever used the datasets and estimation/optimization codes, please cite the following paper: 
