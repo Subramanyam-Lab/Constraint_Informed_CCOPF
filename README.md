@@ -87,6 +87,19 @@ python eta_l_estimation_118_zeromean.py
 python eta_l_estimation_polish_zeromean.py
 ```
 
+- Run this script to implement the algorithm in [Fathabad et al (2023)](https://www.sciencedirect.com/science/article/pii/S0377221722004957) that finds the optimal placement of piecewise linear approximation by specifying a tolerance, default set to 0.005. The slopes and intercepts will be saved to pwl_segments.csv in the current directory
+```bash
+python pwl.py
+```
+
+In Julia, run these scripts to do the CC-OPF optimization using constraint-informed parameters. The worst-case violation of 10 runs (seeds 42-51) will be saved to ../data/118_ci_Cauchy_optimization_summary.csv and ../data/polish_ci_Cauchy_optimization_summary.csv. These are the quantities plotted in Fig. 4. 
+```bash
+include("GMM_reformulation_118.jl")
+```
+```bash
+include("GMM_reformulation_polish.jl")
+```
+
 
 ### 3. Code (Optimization)
 Code for reformulated DC-OPF problem: 
