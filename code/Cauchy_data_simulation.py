@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.mixture import GaussianMixture
 from scipy.stats import norm, wasserstein_distance
+import os
 
 ###################################################
 ### Use this script to plot density curves for 
@@ -99,6 +100,8 @@ def plot_cauchy_comparison(sums: np.ndarray,
     plt.yticks(fontsize=18)
     plt.legend(loc='upper left', fontsize='x-large')
     plt.grid(True)
+    #os.makedirs("Constraint_Informed_CCOPF/figures", exist_ok=True)
+    plt.savefig("/storage/home/eql5355/work/Constraint_Informed_CCOPF/figures/synthetic_c_density.png", dpi=150, bbox_inches="tight")
     plt.show()
 
 
