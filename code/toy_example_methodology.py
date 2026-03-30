@@ -74,12 +74,13 @@ def plot_densities(aggregated, params_5d, params_1d, gaussian_params):
     #plt.xlabel('Aggregate Forecast Error', fontsize=14)
     plt.ylabel('Density', fontsize=18)
     plt.xlim(-10, 10)
-    #plt.title('Aggregated Forecast Errors Fitted with Different Approaches',fontsize=14)
+    plt.title('Aggregated Forecast Errors Fitted with Different Approaches',fontsize=14)
     plt.xticks(fontsize=18)
     plt.yticks(fontsize=18)
     plt.legend(fontsize=14)
     plt.grid(True)
     plt.tight_layout()
+    plt.savefig("../figures/toy_example_density.png", dpi=150, bbox_inches="tight")
     plt.show()
 
 def main():

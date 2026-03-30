@@ -17,7 +17,7 @@ Clone and install requirements for Python scripts:
 ```bash
 git clone https://github.com/Subramanyam-Lab/Constraint_Informed_CCOPF
 cd Constraint_Informed_CCOPF
-conda create -n constraint_informed_ccopf python=3.9 -y
+conda create -n constraint_informed_ccopf python=3.11 -y
 conda activate constraint_informed_ccopf
 pip install -r requirements.txt
 ```
@@ -51,7 +51,7 @@ python toy_example_methodology.py
 python Cauchy_data_simulation.py
 ```
 ```bash
-python NordPool_data_simuation.py
+python NordPool_data_simulation.py
 ```
 
 - Run the following script to store BIC values for K=1,2,...,10 when fitting Synthetic-C in 10d and 50d

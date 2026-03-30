@@ -114,6 +114,7 @@ def plot_nordpool(aggregate_errors: np.ndarray,
     plt.yticks(fontsize=18)
     plt.grid(True)
     #plt.tight_layout()
+    plt.savefig("../figures/nordpool_density.png", dpi=150, bbox_inches="tight")
     plt.show()
 
 
