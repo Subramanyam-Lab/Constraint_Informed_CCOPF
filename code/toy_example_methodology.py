@@ -80,7 +80,7 @@ def plot_densities(aggregated, params_5d, params_1d, gaussian_params):
     plt.legend(fontsize=14)
     plt.grid(True)
     plt.tight_layout()
-    plt.savefig("/storage/home/eql5355/work/Constraint_Informed_CCOPF/figures/toy_example_density.png", dpi=150, bbox_inches="tight")
+    plt.savefig("../figures/toy_example_density.png", dpi=150, bbox_inches="tight")
     plt.show()
 
 def main():
