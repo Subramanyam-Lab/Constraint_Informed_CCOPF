@@ -101,7 +101,7 @@ def plot_cauchy_comparison(sums: np.ndarray,
     plt.legend(loc='upper left', fontsize='x-large')
     plt.grid(True)
     #os.makedirs("Constraint_Informed_CCOPF/figures", exist_ok=True)
-    plt.savefig("/storage/home/eql5355/work/Constraint_Informed_CCOPF/figures/synthetic_c_density.png", dpi=150, bbox_inches="tight")
+    plt.savefig("../figures/synthetic_c_density.png", dpi=150, bbox_inches="tight")
     plt.show()
 
 
